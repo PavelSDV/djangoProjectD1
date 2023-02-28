@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import os
 
 from pathlib import Path
 
@@ -24,6 +25,7 @@ SECRET_KEY = 'django-insecure-)n3c!7&(am!*&^+a1@g3sc-e^5&av+gmrhk1r$$ucmot23fd8w
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     # подключаем ещё приложения
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'fpages',
 ]
 
 SITE_ID = 1
@@ -62,8 +65,8 @@ ROOT_URLCONF = 'project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
         'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -129,3 +132,7 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
