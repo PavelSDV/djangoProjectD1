@@ -1,0 +1,13 @@
+.mystyle {
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}
+.mystyle h1 {
+    font-size: 5vw;
+    font-weight: bold;
+}
+.mystyle h2 {
+    font-size: 3vw;
+}
+.mystyle p {
+    font-size: 2vw;
+}
